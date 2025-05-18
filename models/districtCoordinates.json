@@ -1,0 +1,71 @@
+{
+    "districts": [
+      {
+        "name": "Chennai",
+        "city": "Chennai City Center",
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      },
+      {
+        "name": "Coimbatore",
+        "city": "Coimbatore City Center",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      {
+        "name": "Madurai",
+        "city": "Madurai City Center",
+        "latitude": 9.9394,
+        "longitude": 78.1217
+      },
+      {
+        "name": "Trichy",
+        "city": "Trichy City Center",
+        "latitude": 10.7905,
+        "longitude": 78.6955
+      },
+      {
+        "name": "Salem",
+        "city": "Salem City Center",
+        "latitude": 11.6643,
+        "longitude": 78.1460
+      },
+      {
+        "name": "Tirunelveli",
+        "city": "Tirunelveli City Center",
+        "latitude": 8.7300,
+        "longitude": 77.7100
+      },
+      {
+        "name": "Vellore",
+        "city": "Vellore City Center",
+        "latitude": 12.9167,
+        "longitude": 79.1323
+      },
+      {
+        "name": "Erode",
+        "city": "Erode City Center",
+        "latitude": 11.3385,
+        "longitude": 77.7172
+      },
+      {
+        "name": "Thanjavur",
+        "city": "Thanjavur City Center",
+        "latitude": 10.7843,
+        "longitude": 79.1390
+      },
+      {
+        "name": "Kanyakumari",
+        "city": "Kanyakumari City Center",
+        "latitude": 8.0883,
+        "longitude": 77.5385
+      },
+      {
+        "name": "Villupuram",
+        "city": "Villupuram City Center",
+        "latitude": 11.9382,
+        "longitude": 79.5087
+      }
+    ]
+  }
+  
