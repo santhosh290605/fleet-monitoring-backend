@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+🚘 Fleet Monitoring System – Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the backend module of the Fleet Monitoring System.
+It powers the APIs, database, telemetry simulation, and ML-driven predictive maintenance for the project.
 
-## Available Scripts
+⚡ Note: This repository contains only the backend services. The frontend dashboard and mobile driver app run separately.
 
-In the project directory, you can run:
+📌 Features
 
-### `npm start`
+⚙️ REST APIs – For vehicles, telemetry, maintenance, and ride booking.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🛢 MongoDB Database – Stores vehicle details, telemetry, maintenance history, and paths.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🤖 Machine Learning Integration – Predictive maintenance, risk analysis, and fuel efficiency predictions.
 
-### `npm test`
+🚦 Telemetry Simulation – Vehicle path updates within Chennai with active/inactive/maintenance handling.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🔄 Firebase Integration – Ride booking system (customer side) kept separate from MongoDB fleet system.
 
-### `npm run build`
+📍 Geofencing Support – Location-based tracking and alerts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📖 API Endpoints
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🚗 Vehicle Routes (/api/vehicle)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+GET /api/vehicle → Get all vehicles
 
-### `npm run eject`
+POST /api/vehicle → Add a new vehicle
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+GET /api/vehicle/:id → Get vehicle by ID
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PUT /api/vehicle/:id → Update vehicle details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+DELETE /api/vehicle/:id → Delete vehicle
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📡 Telemetry Routes (/api/telemetry)
 
-## Learn More
+GET /api/telemetry/:vehicleId → Get latest telemetry for a vehicle
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+POST /api/telemetry → Add telemetry entry (speed, fuel, odometer, etc.)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+GET /api/telemetry/history/:vehicleId → Get full telemetry history of a vehicle
 
-### Code Splitting
+🛠 Maintenance Routes (/api/maintenance)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET /api/maintenance/:vehicleId → Get maintenance records for a vehicle
 
-### Analyzing the Bundle Size
+POST /api/maintenance → Add new maintenance entry
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+PUT /api/maintenance/:id → Update maintenance record
 
-### Making a Progressive Web App
+DELETE /api/maintenance/:id → Delete maintenance record
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📊 Strategy Recommendation (/api/strategy)
 
-### Advanced Configuration
+POST /api/strategy/recommend → Get recommended maintenance strategy (delayed, immediate, scheduled) for a vehicle
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+📈 Dashboard Routes (/api/dashboard)
 
-### Deployment
+GET /api/dashboard/overview → Fleet summary (active vehicles, maintenance, fuel stats, etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+GET /api/dashboard/distance → Distance covered by each vehicle
 
-### `npm run build` fails to minify
+GET /api/dashboard/fuel → Fuel efficiency insights
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔍 Diagnostics Routes (/api/diagnostics)
+
+GET /api/diagnostics/:vehicleId → Run diagnostics and get health status
+
+POST /api/diagnostics → Push diagnostic result/update
+
+🛣 Vehicle Path Routes (/api/vehicle-path)
+
+GET /api/vehicle-path/:vehicleId → Get current path of a vehicle
+
+POST /api/vehicle-path → Assign a new path (with fromDistrict → toDistrict)
+
+DELETE /api/vehicle-path/:vehicleId → Clear path for a vehicle
+
+🚕 Ride Booking Routes (/api/ride-booking)
+
+GET /api/ride-booking → Get all ride bookings (from Firebase)
+
+POST /api/ride-booking → Create a new ride booking
+
+PUT /api/ride-booking/:id → Update ride status (completed, ongoing, etc.)
